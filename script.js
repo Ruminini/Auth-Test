@@ -19,10 +19,25 @@ authenticateBtn.addEventListener('click', async () => {
         });
         console.log(credential);
 
+        // Extract user information from the credential object
+        const userId = credential.user.id;
+        const userName = credential.user.name;
+        const displayName = credential.user.displayName;
+        const credentialId = credential.id;
+
+        // Display user information on the website
+        userInfoContainer.innerHTML = `
+            <p>User ID: ${userId}</p>
+            <p>Username: ${userName}</p>
+            <p>Display Name: ${displayName}</p>
+            <p>Credential ID: ${credentialId}</p>
+        `;
+        
         // Authentication successful
         statusMessage.textContent = 'Authentication successful!';
     } catch (error) {
         // Handle authentication errors
+        console.log(credential);
         statusMessage.textContent = 'Authentication failed: ' + error.message;
         console.error(error);
     }
