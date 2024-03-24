@@ -8,7 +8,10 @@ authenticateBtn.addEventListener('click', async () => {
                 challenge: new Uint8Array(32), // Generate a random challenge
                 rp: { name: 'Example Corp' },
                 user: { id: new Uint8Array(16), name: 'user@example.com', displayName: 'User' },
-                pubKeyCredParams: [{ type: 'public-key', alg: -7 }],
+                pubKeyCredParams: [
+                    { type: 'public-key', alg: -7 },  // ES256
+                    { type: 'public-key', alg: -257 }  // RS256
+                ],
                 authenticatorSelection: { authenticatorAttachment: 'platform' },
                 timeout: 60000, // Timeout in milliseconds
                 attestation: 'direct'
