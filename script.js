@@ -32,12 +32,11 @@ authenticateBtn.addEventListener('click', async () => {
             <p>Display Name: ${displayName}</p>
             <p>Credential ID: ${credentialId}</p>
         `;
-        
+
         // Authentication successful
         statusMessage.textContent = 'Authentication successful!';
     } catch (error) {
         // Handle authentication errors
-        console.log(credential);
         statusMessage.textContent = 'Authentication failed: ' + error.message;
         console.error(error);
     }
