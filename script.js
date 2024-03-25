@@ -1,13 +1,13 @@
 const authenticateBtn = document.getElementById('authenticateBtn');
 const statusMessage = document.getElementById('statusMessage');
-
+const userId = new Uint8Array(16);
 authenticateBtn.addEventListener('click', async () => {
     try {
         const credential = await navigator.credentials.create({
             publicKey: {
                 challenge: new Uint8Array(32), // Generate a random challenge
                 rp: { name: 'Example Corp' },
-                user: { id: new Uint8Array(16), name: 'user@example.com', displayName: 'User' },
+                user: { id: userId, name: 'user@example.com', displayName: 'User' },
                 pubKeyCredParams: [
                     { type: 'public-key', alg: -7 },  // ES256
                     { type: 'public-key', alg: -257 }  // RS256
