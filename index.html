@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fingerprint Authentication Demo</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
     <div class="container">
-        <h1>Fingerprint Authentication Demo v4</h1>
-        <button id="authenticateBtn">Authenticate with Fingerprint</button>
-        <p id="statusMessage"></p>
-        <p id="originalID"></p>
-        <p id="newID"></p>
+        <img src="../resources/weatherwiz_logo.jpg" alt="Logo WeatherWiz">
+        <button id="authenticateBtn" disabled>Autenticar</button>
+    </div>
+    
+    <div id="toast" class="hidden">
+        <span id="toast-message"></span>
+        <button onclick="hideToast()">X</button>
     </div>
     <script src="script.js"></script>
 </body>
