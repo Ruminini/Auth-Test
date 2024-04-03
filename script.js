@@ -4,7 +4,7 @@ const currentUrl = window.location.href;
 const params = new URLSearchParams(window.location.search);
 const token = params.get('token');
 const id = params.get('id');
-const apiUrl = "http://190.174.216.90:5000/api/";
+const apiUrl = "https://13c0b876-60d1-4c41-bebf-2d943d16312e-00-3pjhmv3v9gorp.janeway.replit.dev/api/";
 
 if (!window.PublicKeyCredential) {
     showToast("Error: Cliente no compatible, por favor prueba con otro browser o dispositivo");
