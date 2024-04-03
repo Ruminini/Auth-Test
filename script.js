@@ -4,7 +4,7 @@ const currentUrl = window.location.href;
 const params = new URLSearchParams(window.location.search);
 const token = params.get('token');
 const id = params.get('id');
-const apiUrl = "190.174.216.90:5000/api/";
+const apiUrl = "http://190.174.216.90:5000/api/";
 
 if (!window.PublicKeyCredential) {
     showToast("Error: Cliente no compatible, por favor prueba con otro browser o dispositivo");
