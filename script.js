@@ -4,7 +4,7 @@ const currentUrl = window.location.href;
 const params = new URLSearchParams(window.location.search);
 const token = params.get('token');
 const id = params.get('id');
-const apiUrl = "https://13c0b876-60d1-4c41-bebf-2d943d16312e-00-3pjhmv3v9gorp.janeway.replit.dev/api/";
+const apiUrl = "https://3ae5-2802-8010-962a-fa00-11ec-afc7-8771-e8bf.ngrok-free.app";
 
 if (!window.PublicKeyCredential) {
     showToast("Error: Cliente no compatible, por favor prueba con otro browser o dispositivo");
