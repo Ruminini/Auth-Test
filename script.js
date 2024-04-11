@@ -5,8 +5,10 @@ const params = new URLSearchParams(window.location.search);
 const token = params.get('token');
 const id = params.get('id');
 const apiUrl = "https://quality-cicada-wrongly.ngrok-free.app/api/";
+const telegram = window.Telegram.WebApp;
+const auth = telegram.BiometricManager
 
-if (!window.PublicKeyCredential) {
+if (!window.PublicKeyCredential && !telegram.isBiometricAvailable()) {
     showToast("Error: Cliente no compatible, por favor prueba con otro browser o dispositivo");
 }
 
@@ -32,9 +34,9 @@ function addListeners(response) {
             return authenticateKey(auth.id)})
         .then(authResponse => {
             if (authResponse.authSuccess) {
-                showToast("Autenticacion exitosa, redireccionando a telegram. Si no funciona, haz click <a href='https://t.me/t_weather_wiz_bot'>aqui</a>", false, 60);
+                showToast("Autenticacion exitosa, redireccionando a telegram. Si no funciona, haz click <a href='https://t.me/WeatherWizRobot'>aqui</a>", false, 60);
                 setTimeout(() => {
-                    window.location.href = 'tg://resolve?domain=https://t.me/t_weather_wiz_bot';
+                    window.location.href = 'tg://resolve?domain=https://t.me/WeatherWizRobot';
                 }, 1500);
             } else {
                 showToast("Autenticacion fallida, dispositivo no registrado.");
